@@ -171,3 +171,10 @@ test/torturethread
 docs/output
 SDL.tag
 doxygen_warn.txt
+
+# wyvrnpm-generated — do not commit
+/build/
+/wyvrn_internal/
+/wyvrn.lock
+/CMakePresets.json
+/CMakeUserPresets.json

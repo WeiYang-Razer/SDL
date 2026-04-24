@@ -1,0 +1,36 @@
+{
+  "name": "sdl3",
+  "version": "3.4.4.0",
+  "schemaVersion": 2,
+  "kind": "DynamicLib",
+  "description": "Simple DirectMedia Layer 3 (windowing, input, audio, etc.)",
+  "dependencies": {},
+  "options": {
+    "shared": {
+      "default": true,
+      "allowed": [true, false],
+      "description": "Build as shared library; set false for static"
+    }
+  },
+  "build": {
+    "system": "cmake",
+    "configs": [
+      "Debug",
+      "Release",
+      "RelWithDebInfo",
+      "MinSizeRel"
+    ],
+    "configure": [
+      "-DSDL_SHARED=${options.shared}",
+      "-DSDL_STATIC=ON",
+      "-DSDL_TEST_LIBRARY=OFF",
+      "-DSDL_TESTS=OFF",
+      "-DSDL_EXAMPLES=OFF",
+      "-DSDL_INSTALL=ON",
+      "-DCMAKE_DEBUG_POSTFIX=d",
+      "-DCMAKE_RELWITHDEBINFO_POSTFIX=rd",
+      "-DCMAKE_MINSIZEREL_POSTFIX=msr"
+    ],
+    "installDir": "install"
+  }
+}
